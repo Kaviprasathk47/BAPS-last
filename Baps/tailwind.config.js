@@ -10,7 +10,8 @@ export default {
         roboto: ['Roboto', 'sans'],
       },
       colors: {
-        customBlue: '#24317f', // Name your color
+        customBlue: '#24317f',
+        HoverColor:'#1b265e', // Name your color
       },
     },
   },

@@ -1,16 +1,23 @@
 import { useState } from "react";
 import "./MainPage.css";
+import { useNavigate } from "react-router-dom";
 
 export default function App() {
+  const [UserName, SetUserName] = useState("");
   const [PassWordValue, SetPassWordValue] = useState("");
-
+  const navigate = useNavigate();
   const handlePassWord = (event) => {
     SetPassWordValue(event.target.value);
   };
-
+  const handleUserName = (event) => {
+    SetUserName(event.target.value);
+  };
+  const navigateFunction = (event) => {
+    event.preventDefault();
+    navigate("/leave");
+  };
   return (
-    <div className="parent-container">
-     
+    <div className>
       <div className="h-screen flex justify-center items-center backround-cover">
         {/* Centered white container */}
 
@@ -24,17 +31,23 @@ export default function App() {
                 </label>
 
                 <div className="mb-4">
-                  <legend className="text-gray-500 font-semibold capitalize tracking-wider">Username</legend>
+                  <legend className="text-gray-500 font-semibold capitalize tracking-wider">
+                    Username
+                  </legend>
                   <input
                     type="text"
                     name="text"
+                    value={UserName}
+                    onChange={handleUserName}
                     placeholder="Username"
                     className="mt-1 p-3 w-full border border-gray-400 rounded-md   focus:outline-customBlue"
                   />
                 </div>
 
                 <div className="mb-4 ">
-                <legend className="text-gray-500 font-semibold capitalize tracking-wider">Password</legend>
+                  <legend className="text-gray-500 font-semibold capitalize tracking-wider">
+                    Password
+                  </legend>
                   <input
                     type="password"
                     name="password"
@@ -46,7 +59,10 @@ export default function App() {
                 </div>
 
                 <div className="flex justify-center pt-2">
-                  <button className="p-3 bg-customBlue text-white rounded-md w-full ">
+                  <button
+                    className="p-3 bg-customBlue text-white rounded-md w-full "
+                    onClick={navigateFunction}
+                  >
                     Login
                   </button>
                 </div>
@@ -54,19 +70,21 @@ export default function App() {
                   Or
                 </label>
                 <div className="flex justify-center">
-                  <button className="p-3 bg-customBlue text-white rounded-md w-full mb-4 ">
+                  <button
+                    className="p-3 bg-customBlue text-white rounded-md w-full mb-4"
+                    onClick={navigateFunction}
+                  >
                     Sign-In with Google
                   </button>
                 </div>
               </form>
             </div>
           </div>
-         {/*right side*/}
+          {/*right side*/}
           <div className="background-Image"></div>
         </div>
       </div>
       <div className="circle"></div>
-      
     </div>
   );
 }
