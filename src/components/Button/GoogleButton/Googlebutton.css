@@ -1,0 +1,57 @@
+.Signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+  }
+  
+  .googlebutton {
+    display: flex;
+    align-items: center;
+    background-color: #F8F8F8;
+    width: 330px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .googleicon {
+    margin-right: 80px; 
+  }
+  .signupcontent{
+    text-align: left;
+    margin-right: 55px;
+    margin-bottom: 20px;
+  }
+  
+  .googletext {
+    font-weight: 100; 
+    color: black;
+  }
+  .Logo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 210px;
+    margin-bottom: 20px;
+  }
+  .Signupheader{
+    text-align: left;
+    margin-right: 290px;
+    margin-bottom: 10px;
+  }
+  .Googlebutton{
+    margin-bottom: 15px;
+  }
+  .Outlook{
+    margin-bottom: 24px;
+  }
+  .Loginbutton{
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
