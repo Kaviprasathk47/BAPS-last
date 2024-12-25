@@ -1,8 +1,9 @@
 import React from "react";
-import { Box, Typography, Link } from "@mui/material";
-import { activitiesStyles } from "./activitiesStyles";
+import { Box, Typography, Button } from "@mui/material";
+import useStyles from "./activitiesStyles";
 
 const Activities = () => {
+  const classes = useStyles();
   const activities = [
     { label: "Rebooted Server", time: "17:00", color: "blue" },
     { label: "Server Online", time: "18:00", color: "purple" },
@@ -14,31 +15,31 @@ const Activities = () => {
   ];
 
   return (
-    <Box sx={activitiesStyles.container}>
-      <Typography variant="h6" sx={activitiesStyles.title}>
+    <Box className={classes.container}>
+      <Typography variant="h6" className={classes.title}>
         Recent Activities
       </Typography>
-      <Box sx={activitiesStyles.activityList}>
+      <Box className={classes.activityList}>
         {activities.map((activity, index) => (
-          <Box key={index} sx={activitiesStyles.activityItem}>
+          <Box key={index} className={classes.activityItem}>
             <Box
-              sx={{
-                ...activitiesStyles.dot,
-                backgroundColor: activity.color,
-              }}
+              className={classes.dot}
+              style={{ backgroundColor: activity.color }}
             />
-            <Typography variant="body2" sx={activitiesStyles.label}>
+            <Typography variant="body2" className={classes.label}>
               {activity.label}
             </Typography>
-            <Typography variant="caption" sx={activitiesStyles.time}>
+            <Typography variant="caption" className={classes.time}>
               {activity.time}
             </Typography>
           </Box>
         ))}
       </Box>
-      <Link href="#" sx={activitiesStyles.viewAll}>
-        View All →
-      </Link>
+      <Box className={classes.viewAllContainer}>
+        <Button className={classes.viewAll}>
+          View All →
+        </Button>
+      </Box>
     </Box>
   );
 };

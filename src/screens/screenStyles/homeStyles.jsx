@@ -1,50 +1,112 @@
-export const homeStyles = {
-    body: {
-      backgroundColor: '#fafafa',
-    },
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles(() => ({
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "20px",
+    padding: "20px",
+    backgroundColor: "#F9F9F9",
+    height: "100vh",
+  },
+  dashtitle: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    backgroundColor: "#FFFFFF",
+    borderRadius: "10px",
+    padding: "20px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    marginBottom: "20px",
+    width: "100%",
+  },
+  dashTypography: {
+    fontWeight: 600,
+    fontSize: "20px",
+  },
+  contentContainer: {
+    display: "flex",
+    gap: "20px",
+    flexWrap: "wrap",
+    width: "100%",
+  },
+  leftSection: {
+    flex: 2,
+    backgroundColor: "#FFFFFF",
+    borderRadius: "10px",
+    padding: "20px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    minWidth: "300px",
+  },
+  rightSection: {
+    flex: 1,
+    display: "flex",
+    flexDirection: "column",
+    gap: "20px",
+    minWidth: "250px",
+  },
+  attendance: {
+    backgroundColor: "#FFFFFF",
+    borderRadius: "10px",
+    padding: "20px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+  },
+  notifications: {
+    backgroundColor: "#FFFFFF",
+    borderRadius: "10px",
+    padding: "20px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+  },
+  leftContent: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "20px",
+  },
+  eventActivitiesSection: {
+    display: "flex",
+    gap: "20px",
+    marginTop: "20px",
+    width: "100%",
+  },
+  eventSection: {
+    flex: 1,
+    padding: "20px",
+    backgroundColor: "#FFFFFF",
+    borderRadius: "10px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+  },
+  activitiesSection: {
+    flex: 1,
+    padding: "20px",
+    backgroundColor: "#FFFFFF",
+    borderRadius: "10px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+  },
+  "@media (max-width: 768px)": {
     container: {
-      display: 'flex',
-      justifyContent: 'space-between',
+      padding: "10px",
     },
-    seccontainer: {
-      display: 'flex',
-      flexDirection: 'row', // Ensures items are in a row
-      justifyContent: 'space-between', // Even spacing between items
-      alignItems: 'center', // Align items vertically in the center
-      margin: '35px 0 0 0',
+    contentContainer: {
+      flexDirection: "column",
     },
-    calendarCont: {
-      flex: 1,
-      minWidth: '20%',
-      maxWidth: '45%',
+    leftSection: {
+      minWidth: "100%",
+      marginBottom: "20px",
     },
-    eventContainer: {
-      flex: 1,
-      minWidth: '80%',
-      maxWidth: '45%',
+    rightSection: {
+      minWidth: "100%",
     },
-    clockCont: {
-      flex: 1,
-      maxWidth: '30%', // Adjust the width for proper alignment
-      minWidth: '20%',
+    eventActivitiesSection: {
+      flexDirection: "column",
+      gap: "10px",
     },
-    actContainer: {
-      flex: 1,
-      maxWidth: '30%', // Adjust the width for proper alignment
-      minWidth: '20%',
+    eventSection: {
+      width: "100%",
     },
-    artcontainer: {
-      flex: 1,
-      maxWidth: '30%', // Adjust the width for proper alignment
-      minWidth: '20%',
+    activitiesSection: {
+      width: "100%",
     },
-    homeCont: {
-      margin: '0 50px',
-    },
-    diline: {
-      width: '30px',
-      height: '2px',
-      backgroundColor: 'grey',
-    },
-  };
-  
+  },
+}));
+
+export default useStyles;

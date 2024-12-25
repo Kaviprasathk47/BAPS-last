@@ -1,46 +1,58 @@
-import { Box } from '@mui/material';
-import Calendar from '../components/calender/calendar';
-import Event from '../components/eventScreen/event';
-import { homeStyles } from './screenStyles/homeStyles';
-import Clock from '../components/clockLive/clock';
-import Activity from '../components/activities/activities';
-import AChart from '../components/attendanceChart/attendanceChart';
-import { useEffect } from 'react';
+import React, { useEffect } from "react";
+import { Box, Typography } from "@mui/material";
+import MarkChart from "../components/markChart/markChart";
+import Attendance from "../components/attendanceChart/attendanceChart";
+import Notifications from "../components/notificationStat/notification";
+import useStyles from "./screenStyles/homeStyles";
+import Comp from "../components/compare/compareT";
+import Event from "../components/eventScreen/event";
+import Activities from "../components/activities/activities";
+import SelectTerm from "../components/selectTerm/selectTerm";
+import An from "../components/anounment/anouncement";
 
+const Home = () => {
+  const classes = useStyles();
 
-function HomePage() {
+  useEffect(() => {
+    document.title = "B A P S - Home";
+  }, []);
 
-    useEffect(() =>{
-        document.title = 'B A P S - Home';
-    },[])
+  return (
+    <Box className={classes.container}>
+      <Box className={classes.dashtitle}>
+        <Typography className={classes.dashTypography}>Dashboard</Typography>
+        <An />
+      </Box>
 
-    return (
-        <Box sx={{ ...homeStyles.body, ...homeStyles.homeCont }}>
-            <Box sx={homeStyles.container}>
-                <Box sx={homeStyles.calendarCont}>
-                    <Calendar />
-                </Box>
-
-                <Box sx={homeStyles.eventContainer}>
-                    <Event />
-                </Box>
+      <Box className={classes.contentContainer}>
+        <Box className={classes.leftSection}>
+          <Box className={classes.leftContent}>
+            <Box>
+              <SelectTerm />
+              <MarkChart />
             </Box>
-            <Box sx={homeStyles.seccontainer}>
-                <Box sx={homeStyles.clockCont}>
-                    <Clock/>
-                </Box>
-
-                <Box sx={homeStyles.actContainer}>
-                    <Activity/>
-                </Box>
-
-                <Box sx={homeStyles.artcontainer}>
-                    <AChart/>
-                </Box>
-            </Box>
-            
+            <Comp />
+          </Box>
         </Box>
-    );
-}
+        <Box className={classes.rightSection}>
+          <Box className={classes.attendance}>
+            <Attendance />
+          </Box>
+          <Box className={classes.notifications}>
+            <Notifications />
+          </Box>
+        </Box>
+        <Box className={classes.eventActivitiesSection}>
+          <Box className={classes.eventSection}>
+            <Event />
+          </Box>
+          <Box className={classes.activitiesSection}>
+            <Activities />
+          </Box>
+        </Box>
+      </Box>
+    </Box>
+  );
+};
 
-export default HomePage;
+export default Home;

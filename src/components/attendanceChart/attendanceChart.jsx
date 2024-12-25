@@ -1,61 +1,57 @@
-import React, { useState } from "react";
-import { Box, Typography } from "@mui/material";
-import { PieChart, Pie, Cell} from "recharts";
-import { chartStyles } from "./attendanceChartStyles";
+import React from "react";
+import { Box, Typography, Button } from "@mui/material";
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import useStyles from "./attendanceChartStyles";
 
-const AttendanceChart = () => {
-  const data = [
-    { name: "No. of Workers", value: 25, color: "#D9931D" },
-    { name: "No. of Students", value: 737, color: "#6A1B9A" },
-    { name: "No. of Staffs", value: 30, color: "#E53935" },
-  ];
+const data = [
+  { name: "Present", value: 40 },
+  { name: "Absent", value: 32 },
+];
 
-  const [activeCategory, setActiveCategory] = useState(data[1]);
+const COLORS = ["#6C63FF", "#D7D7FF"];
 
-  const handleMouseEnter = (_, index) => {
-    setActiveCategory(data[index]);
-  };
+const AttChart = () => {
+  const classes = useStyles();
 
   return (
-    <Box sx={chartStyles.container}>
-      <Typography variant="h6" sx={chartStyles.title}>
-        Attendace Chart
+    <Box className={classes.container}>
+      <Box className={classes.header}>
+        <Typography variant="subtitle1" className={classes.title}>
+          Attendance
+        </Typography>
+        <Button className={classes.button} variant="text">
+          View Details
+        </Button>
+      </Box>
+      <Typography className={classes.subheader} variant="body2">
+        From 1-6 Dec, 2020
       </Typography>
-      <Box sx={chartStyles.chartWrapper}>
-        <PieChart width={200} height={200}>
+      <ResponsiveContainer className={classes.chartContainer} width="100%" height={200}>
+        <PieChart>
           <Pie
             data={data}
             cx="50%"
             cy="50%"
             innerRadius={60}
             outerRadius={80}
+            paddingAngle={5}
             dataKey="value"
-            onMouseEnter={handleMouseEnter}
           >
             {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={entry.color} />
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}
           </Pie>
         </PieChart>
-        <Box sx={chartStyles.centerLabel}>
-          <Typography variant="h5" sx={{ color: activeCategory.color }}>
-            {activeCategory.name}
-          </Typography>
-          <Typography variant="h6" sx={chartStyles.value}>
-            {activeCategory.value}
-          </Typography>
-        </Box>
-      </Box>
-      <Box sx={chartStyles.legend}>
-        {data.map((entry, index) => (
-          <Box key={index} sx={chartStyles.legendItem}>
+      </ResponsiveContainer>
+      <Box className={classes.legendContainer}>
+        {data.map((item, index) => (
+          <Box key={index} className={classes.legendItem}>
             <Box
-              sx={{
-                ...chartStyles.legendDot,
-                backgroundColor: entry.color,
-              }}
+              className={classes.legendDot}
+              style={{ backgroundColor: COLORS[index] }}
             />
-            <Typography variant="body2">{entry.name}</Typography>
+            <Typography className={classes.legendText}>{item.name}</Typography>
+            <Typography className={classes.legendValue}>{item.value}%</Typography>
           </Box>
         ))}
       </Box>
@@ -63,4 +59,4 @@ const AttendanceChart = () => {
   );
 };
 
-export default AttendanceChart;
+export default AttChart;

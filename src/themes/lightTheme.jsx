@@ -5,11 +5,79 @@ const lightTheme = createTheme({
     typography: {
       fontFamily: "Poppins",
     },
+    boxshadows:{
+      bs1: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+    },
+
+    borderRadius:{
+      primary:'4px',
+    },
+
+    backgroundcolors:{
+      primary:'#ffffff',
+      trans:'rgba(0, 0, 0, 0)',
+    },
+
+    button:{
+      primary:'#5A6ACF',
+      border:{
+        primary:'#DDE4F0',
+      },
+    },
+
+    hover:{
+      primary:'#f5f5f5',
+    },
+    bars:{
+      primary:'#5A6ACF',
+      secondary:'#E6E8EC',
+    },
+    text:{
+      color:{
+        primary:'#1F384C',
+        secondary:'#353448',
+      },
+
+      fw:{
+        primary:'500',
+        sixh:'600',
+      },
+      size:'1.3rem',
+
+      view:{
+        primary:'#6956E5',
+      },
+    },
+
+    cursor:{
+      pointer:'pointer',
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     palette: {
       text: {
         primary: "#353448",
         secondary: "#71707E",
         disabled: "#B9B9B9",
+        Fonts:'1.3rem',
       },
       primary: {
         main: "#665CD7",
@@ -32,29 +100,7 @@ const lightTheme = createTheme({
         main: "#49C792", 
       },
     },
-    components: {
-      MuiOutlinedInput: {
-        styleOverrides: {
-          root: {
-            "& .MuiOutlinedInput-notchedOutline": {
-              borderColor: "#EBEBEB", // set your desired idle border color
-            },
-            "&:hover .MuiOutlinedInput-notchedOutline": {
-              borderColor: "#CACACA", // set your desired hover border color
-            },
-            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-              borderColor: "#49C792", // set your desired focus border color
-            },
-            "&.Mui-active .MuiOutlinedInput-notchedOutline": {
-              borderColor: "#EBEBEB",
-            },
-            "&.Mui-disabled .MuiOutlinedInput-notchedOutline": {
-              borderColor: "#CACACA",
-            },
-          },
-        },
-      },
-    },
+    
   });
   
   export default lightTheme;
