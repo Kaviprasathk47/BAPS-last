@@ -1,0 +1,46 @@
+/* Add some basic styles */
+.search-container {
+    padding: 16px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    font-size: 16px;
+}
+
+.search-results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.search-item {
+    flex: 1 1 calc(33.333% - 16px); /* 3 items per row */
+    box-sizing: border-box;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.search-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Media query for tablets */
+@media (max-width: 768px) {
+    .search-item {
+        flex: 1 1 calc(50% - 16px); /* 2 items per row */
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+    .search-item {
+        flex: 1 1 100%; /* 1 item per row */
+    }
+}
