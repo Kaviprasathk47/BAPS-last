@@ -9,6 +9,7 @@ import Event from "../components/eventScreen/event";
 import Activities from "../components/activities/activities";
 import SelectTerm from "../components/selectTerm/selectTerm";
 import An from "../components/anounment/anouncement";
+import NavBar from "../components/navBar/sideBar";
 
 const Home = () => {
   const classes = useStyles();
@@ -51,6 +52,8 @@ const Home = () => {
           </Box>
         </Box>
       </Box>
+      
+      <NavBar/>
     </Box>
   );
 };

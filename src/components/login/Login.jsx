@@ -1,80 +1,85 @@
-import { Box, Typography, Alert } from '@mui/material';
-import Inputfield from '../Button/Inputfield/Inputfield';
-import Logins from '../Button/LoginButton/Login';
-import { useNavigate } from 'react-router-dom';
-import { SigninStyle } from './Logistyle';
-import { useLocation } from 'react-router-dom';
-import CloseIcon from '@mui/icons-material/Close';
+import { useState } from "react";
+import "./MainPage.css";
+import { useNavigate } from "react-router-dom";
+import GoogleBtn from '../Button/GoogleButton/GoogleButton'
+import Google from '../../assets/logos/Google'
+import LoginBtn from '../Button/LoginButton/Login'
 
-const Login = () => {
-    const navigate = useNavigate();
-    const location = useLocation();
-    const { alertMessage } = location.state || {};
 
-    const handleForgotpass = () => {
-        navigate('/glogin');
-    };
 
-    const handlelogon = () => {
-        navigate('/glogin');
-    };
+export default function App() {
+  const [UserName, SetUserName] = useState("");
+  const [PassWordValue, SetPassWordValue] = useState("");
+  const navigate = useNavigate();
+  const handlePassWord = (event) => {
+    SetPassWordValue(event.target.value);
+  };
+  const handleUserName = (event) => {
+    SetUserName(event.target.value);
+  };
 
-    return (
-        <Box sx={SigninStyle.Signinpage}>
-            <Box sx={SigninStyle.Signin}>
-                {alertMessage && (
-                    <Box sx={SigninStyle.alert}>
-                        <Alert severity="success" sx={SigninStyle.msg}>
-                            {alertMessage}
-                            <Box sx={SigninStyle.closeBox}>
-                                <CloseIcon sx={SigninStyle.alertclose} />
-                            </Box>
-                        </Alert>
-                    </Box>
-                )}
+  const handleLogin = () => {
+    navigate('/home')
+  }
+  return (
+    <div className>
+      <div className="h-screen flex justify-center items-center backround-cover">
+        {/* Centered white container */}
 
-                <Box sx={SigninStyle.welcomebox}>
-                    <Typography sx={SigninStyle.name} variant='h6'>B A P S</Typography>
-                    <Typography sx={SigninStyle.welcome} variant='h6'>Welcome!</Typography>
-                </Box>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 grid-flow-row ">
+          <div className=" bg-white rounded-lg shadow-lg overflow-x-auto ">
+            {/* left Side - Login Form */}
+            <div className="flex-1 flex justify-center items-center p-14 ">
+              <form className="flex flex-col w-96 max-w-full overflow-auto">
+                <label className="font-semibold text-center mb-6 text-2xl text-gray-400">
+                  Welocome Back!.
+                </label>
 
-                <Box sx={SigninStyle.signincontentbox}>
-                    <Typography sx={SigninStyle.Signincontent} variant='body2'>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione, quia!
-                    </Typography>
-                </Box>
+                <div className="mb-4">
+                  <legend className="text-gray-500 font-semibold capitalize tracking-wider">
+                    Username
+                  </legend>
+                  <input
+                    type="text"
+                    name="text"
+                    value={UserName}
+                    onChange={handleUserName}
+                    placeholder="Username"
+                    className="mt-1 p-3 w-full border border-gray-400 rounded-md   focus:outline-customBlue"
+                  />
+                </div>
 
-                <Box sx={SigninStyle.Emailfield}>
-                    <Typography sx={SigninStyle.signinemail} variant='body2'>
-                        Email<span style={{ color: 'red' }}>*</span>
-                    </Typography>
-                    <Inputfield type="email" placeholder="Enter your email" />
-                </Box>
+                <div className="mb-4 ">
+                  <legend className="text-gray-500 font-semibold capitalize tracking-wider">
+                    Password
+                  </legend>
+                  <input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    value={PassWordValue}
+                    onChange={handlePassWord}
+                    className="mt-1 p-3 w-full border border-gray-400 rounded-md  focus:outline-customBlue"
+                  />
+                </div>
 
-                <Box sx={SigninStyle.Passwordfield}>
-                    <Typography sx={SigninStyle.signinPassword} variant="body2">
-                        Password<span style={{ color: 'red' }}>*</span>
-                    </Typography>
-                    <Inputfield type="password" placeholder="Enter your password" />
-                </Box>
-
-                <Box sx={SigninStyle.forgotpasswordbox}>
-                    <Typography 
-                        sx={SigninStyle.Forgot} 
-                        onClick={handleForgotpass} 
-                        variant='body2'
-                        style={{ cursor: 'pointer' }} 
-                    >
-                        Forgot Password?
-                    </Typography>
-                </Box>
-
-                <Box sx={SigninStyle.Loginbbox}>
-                    <Logins text="Log In" onClick={handlelogon} />
-                </Box>
-            </Box>
-        </Box>
-    );
-};
-
-export default Login;
+                <div className="flex justify-center pt-2">
+                  <LoginBtn text = "Login" onClick={handleLogin} />
+                </div>
+                <label className="text-center mt-2 mb-2 font-semibold text-gray-400">
+                  Or
+                </label>
+                <div className="flex justify-center pt-2">
+                  <GoogleBtn icon={<Google />} text="Sign in with Google" onClick={handleLogin} />
+                </div>
+              </form>
+            </div>
+          </div>
+          {/*right side*/}
+          <div className="background-Image"></div>
+        </div>
+      </div>
+      <div className="circle"></div>
+    </div>
+  );
+}

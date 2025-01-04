@@ -1,0 +1,21 @@
+/* MainPage.css */
+.background-Image {
+    background-image: url("../../assets/images/image-1.1.png");
+    z-index: 999;
+    position: relative;
+    /* border-radius: 65%; */
+    right: -20%;
+    border-color: white;
+    background-size: cover; /* Ensures the image covers the full container */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+  }
+  
+  
+   .parent-container {
+     position: relative; /* Required for absolute positioning of the child elements */
+     overflow: hidden; /* Prevents any overflow outside the container */
+     width: 100%; /* Ensure full width */
+     height: 100%; /* Adjust based on content */
+   }
+    
