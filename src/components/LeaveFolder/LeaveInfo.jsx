@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Modal, Button, Table } from "antd";
 import "./LeaveInfo.css";
-// import { useLocation } from "react-router-dom";
+
 
 const LeaveInfo = () => {
   // const location = useLocation();
@@ -93,15 +93,16 @@ const LeaveInfo = () => {
   ];
 
   return (
-    <div className="flex h-screen w-screen justify-center items-center bg-gray-200 lg:pl-44">
-      <div className="w-full bg-white p-8 rounded shadow-lg">
+    <div className="flex h-screen max-w-screen justify-center items-center bg-gray-200 lg:pl-44">
+      <div className="max-w-4xl bg-white  rounded shadow-lg">
         <form className="grid grid-cols-1 p-2">
-          <div className="flex flex-row space-x-5 max-w-full p-2">
+          <div className="flex flex-row space-x-5 max-w-full ">
             <Table
               dataSource={dataSource}
               columns={columns}
-              className="custom-table"
-              pagination={{ pageSize: 5 }}
+              className="custom-table flex"
+              pagination={{ pageSize: 5 ,position:['bottomRight']}}
+            
             />
             <Modal
               title="Leave Details"
@@ -109,9 +110,10 @@ const LeaveInfo = () => {
               footer={null}
               closable={true}
               onCancel={() => setIsModalVisible(false)}
+              
             >
               {modalData ? (
-                <div className="p-4 justify-center text-center ">
+                <div className="p-4 w-full justify-center text-center ">
                   <h2 className="text-xl tracking-wider capitalize">
                     {modalData.name}
                   </h2>

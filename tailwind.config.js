@@ -11,7 +11,9 @@ export default {
       },
       colors: {
         customBlue: '#24317f',
-        HoverColor:'#1b265e', // Name your color
+        HoverColor:'#1b265e',
+        customBlue2: '#4096ff',
+        HoverColor2:'#3378cc',  // Name your color
       },
     },
   },

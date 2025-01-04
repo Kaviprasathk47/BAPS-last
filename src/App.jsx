@@ -6,7 +6,8 @@ import SideBar from './SideBar/Sidebar.jsx';
 import LeaveFormPage from './components/LeaveFolder/LeaveForm.jsx';
 import LeaveInfo from './components/LeaveFolder/LeaveInfo.jsx';
 import AboutPage from './components/AboutPage.jsx';
-
+import HomeWork from './components/Academics/HomeWork.jsx';
+import LeaderBoard from './components/Academics/LeaderBorad.jsx';
 document.title = "BAPS";
 
 const App = () => {
@@ -25,7 +26,9 @@ const App = () => {
         <Route path="/Popup" element={<Chart />} />
         <Route path="/leave" element={<LeaveFormPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/homework" element={<HomeWork />} />
         <Route path="/LeaveInfo" element={<LeaveInfo />} />
+        <Route path="/leaderboard" element={<LeaderBoard />} />
       </Routes>
     </div>
   );

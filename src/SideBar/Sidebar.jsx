@@ -3,7 +3,10 @@ import { Link, useLocation } from 'react-router-dom';
 import { 
   Home, GraduationCap, Calendar, LayoutDashboard, LogOut,
   Activity, CreditCard, DollarSign, BookOpen, FileText, 
-  ChevronDown, ChevronUp, Menu, Bell 
+  ChevronDown, ChevronUp, Menu, Bell,MessageSquare, 
+  Handshake,
+  AlarmClockPlus,
+  Filter
 } from 'lucide-react';
 
 const Sidebar = () => {
@@ -52,9 +55,9 @@ const Sidebar = () => {
           path: '/homework'
         },
         { 
-          title: 'Search', 
-          icon: <Activity className="w-4 h-4" />,
-          path: '/search'
+          title: 'LeaderBoard', 
+          icon: <Filter className="w-4 h-4" />,
+          path: '/leaderboard'
         }
       ]
     },
@@ -90,8 +93,15 @@ const Sidebar = () => {
     { 
       id: 'menu6',
       title: 'Communication', 
-      icon: <BookOpen className="w-5 h-5" />,
-      path: '/communication'
+      
+      icon: <Handshake className="w-5 h-5" />,
+      subItems: [
+        { 
+          title: 'Chat', 
+          icon: <MessageSquare className="w-4 h-4" />,
+          path: '/chat'
+        }
+      ]
     },
     {
       id: 'menu7',
@@ -100,7 +110,7 @@ const Sidebar = () => {
       subItems: [
         { 
           title: 'Notifications', 
-          icon: <Bell className="w-4 h-4" />,
+          icon: <AlarmClockPlus className="w-4 h-4" />,
           path: '/notifications'
         }
       ]
@@ -204,12 +214,12 @@ const Sidebar = () => {
       <div
         className={`
           fixed top-0 left-0 h-screen bg-white shadow-lg w-64 
-          transition-transform duration-300 ease-in-out flex flex-col
+          transition-transform duration-300 ease-in-out flex flex-col z-50
           ${isOpen ? 'translate-x-0' : '-translate-x-full'}
         `}
       >
         <div className="flex-shrink-0 p-4 border-b">
-          <h1 className="text-xl font-semibold text-gray-800"><bold>B</bold>APS Portal</h1>
+          <h1 className="text-xl font-semibold text-gray-800"><bold className="text-customBlue text-2xl">B</bold>APS Portal</h1>
         </div>
 
         <nav className="flex-1 overflow-y-auto p-4">
