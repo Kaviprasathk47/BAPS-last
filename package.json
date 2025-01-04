@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "baps",
   "private": true,
   "version": "0.0.0",
@@ -40,5 +41,14 @@
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
     "vite": "^6.0.1"
+=======
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17"
+  },
+  "dependencies": {
+    "react-router-dom": "^7.0.2"
+>>>>>>> 484f2713ecaa77bf0bca12c28ee107005ce90f13
   }
 }
