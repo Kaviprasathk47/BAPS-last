@@ -37,7 +37,7 @@ const RadialBarChart = ({ labels, seriesData }) => {
   });
 
   return (
-    <div className="bg-white rounded-lg">
+    <div className="bg-white rounded-lg ">
       <Chart
         options={options}
         series={options.series}

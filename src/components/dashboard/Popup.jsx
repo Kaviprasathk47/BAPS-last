@@ -18,7 +18,7 @@ const App = () => {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="pl-72" >
       <Button type="primary" onClick={showModal}>
         Open Modal
       </Button>

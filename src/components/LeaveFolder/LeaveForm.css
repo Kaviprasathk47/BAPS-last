@@ -2,8 +2,9 @@
   float: right;
   height: 1.8vw;
   width: 10vw;
-    border-radius: 5px;
+  border-radius: 5px;
   color: white;
+  
   text-align: center;
 }
 button {
