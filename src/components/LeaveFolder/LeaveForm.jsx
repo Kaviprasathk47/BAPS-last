@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { notification } from "antd";
-import {
-  differenceInYears,
-  differenceInMonths,
-  differenceInDays,
-} from "date-fns";
+import Leaveinfo from './LeaveInfo.jsx'
+import { useNavigate } from "react-router-dom";
 import "./LeaveForm.css";
 const LeaveForm = () => {
   const [selectedBtnFrm, setSelectedBtnFrm] = useState(null);
@@ -13,7 +10,9 @@ const LeaveForm = () => {
   const [inputTypeTo, setInputTypeTo] = useState("text");
   const [selectDateFrm, SetselectDateFrm] = useState();
   const [selectDateTo, SetselectDateTo] = useState();
-
+  const[ReasonValue,SetReasonValue] = useState();
+  
+  const navigate = useNavigate();
   const handleValuesDate = (state_date, e) => {
     const newValue = e.target.value;
     if (state_date === "from") {
@@ -21,6 +20,17 @@ const LeaveForm = () => {
     } else {
       SetselectDateTo(newValue);
     }
+  };
+  const navigateFunction = (event) => {
+    event.preventDefault();
+    navigate("/LeaveInfo"
+    //   state: {
+    //     reasonValue: {ReasonValue},
+    //     datefrm:{selectDateFrm},
+    //     dateto:{selectDateTo},
+       
+    //   },
+    );
   };
 
   const getTodayDate = () => {
@@ -98,22 +108,36 @@ const LeaveForm = () => {
   const handleSessionsTo = (button) => {
     setSelectedBtnTo(button);
   };
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (selectedBtnFrm === null || selectedBtnTo === null) {
       NotificationHandler("error", "Invalid", "Fill the Sessions");
       return;
+   
     }
-
     NotificationHandler("success", "success", "Form Submitted");
+    // alert(ReasonValue);
+    
+    navigateFunction(e);
   };
+
+ const HandleTextAre = (e) => 
+ {
+  const Newvalue = e.target.value;
+
+  SetReasonValue(Newvalue);
+ }
+ 
+
+
 
   return (
     <div className="h-screen bg-gray-100 flex items-center justify-center p-8 ">
-      {" "}
+     
       {/* Center content */}
       <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-4xl">
-        {" "}
+      
         {/* Wide container */}
         <form className="w-full" onSubmit={(e) => handleSubmit(e)}>
           <label className="font-semibold text-center mb-6 text-2xl text-gray-600 block">
@@ -221,16 +245,30 @@ const LeaveForm = () => {
               rows={3}
               cols={10}
               required
+              value={ReasonValue}
+               onChange={(e)=>HandleTextAre(e)}
             ></textarea>
           </div>
-          <div className="">
-            <button className="text-white p-3 mt-4 w-full rounded-md bg-customBlue">
+          <div>
+            <button className="text-white p-3 mt-4 w-full rounded-md bg-customBlue" >
               Submit
+              
             </button>
+           
           </div>
         </form>
       </div>
+      {/* {passValue ? (
+  <Leaveinfo ReasonValue={ReasonValue} passValue={passValue} />
+) : (
+  (() => {
+    NotificationHandler("warning", "error", "Form Not Submitted");
+    return null;
+  })()
+)} */}
+
     </div>
+    
   );
 };
 
