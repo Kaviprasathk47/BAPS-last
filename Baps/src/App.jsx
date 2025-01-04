@@ -1,5 +1,6 @@
 import React from 'react'
 import MainPage from './components/MainPage.jsx';
+import Chart from './components/dashboard/Popup.jsx'
 import { Route, Routes } from 'react-router-dom';
 import LeaveFormPage from './components/LeaveFolder/LeaveForm.jsx';
 import SearchComponent from './components/staffdetails/app.jsx';
@@ -11,8 +12,11 @@ const App = () => {
     <div>
       <Routes>
 
-        <Route 
+        {/* <Route 
         path='/' element ={<MainPage/>}
+        /> */}
+          <Route 
+        path='/Popup' element ={<Chart/>}
         />
            <Route 
         path='/leave' element ={<LeaveFormPage/>}
