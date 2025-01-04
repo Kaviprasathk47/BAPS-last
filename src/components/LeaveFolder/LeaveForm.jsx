@@ -24,7 +24,12 @@ const LeaveForm = () => {
   const navigateFunction = (event) => {
     event.preventDefault();
     navigate("/LeaveInfo"
-    
+    //   state: {
+    //     reasonValue: {ReasonValue},
+    //     datefrm:{selectDateFrm},
+    //     dateto:{selectDateTo},
+       
+    //   },
     );
   };
 
@@ -128,7 +133,7 @@ const LeaveForm = () => {
 
 
   return (
-    <div className="h-screen bg-gray-100 flex pl-72 items-center justify-center p-8 ">
+    <div className="min-h-screen bg-gray-100 flex lg:pl-44 items-center justify-center p-6">
      
       {/* Center content */}
       <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-4xl">
@@ -230,7 +235,7 @@ const LeaveForm = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col relative space-y-2">
+          <div className="flex flex-col  space-y-2">
             <label className="text-gray-700 font-semibold capitalize tracking-widest p-1">
               reason
             </label>

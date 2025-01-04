@@ -37,7 +37,7 @@ const Sidebar = () => {
         { 
           title: 'Status', 
           icon: <Activity className="w-4 h-4" />,
-          path: '/'
+          path: '/Status'
         }
       ]
     },
@@ -209,7 +209,7 @@ const Sidebar = () => {
         `}
       >
         <div className="flex-shrink-0 p-4 border-b">
-          <h1 className="text-xl font-semibold text-gray-800">School Portal</h1>
+          <h1 className="text-xl font-semibold text-gray-800"><bold>B</bold>APS Portal</h1>
         </div>
 
         <nav className="flex-1 overflow-y-auto p-4">
