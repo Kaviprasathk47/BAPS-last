@@ -93,7 +93,7 @@ const LeaveInfo = () => {
   ];
 
   return (
-    <div className="flex h-screen justify-center items-center bg-gray-200 p-8">
+    <div className="flex h-screen justify-center items-center bg-gray-200 pl-64">
       <div className="max-w-4xl bg-white p-8 rounded shadow-lg">
         <form className="grid grid-cols-1 p-2">
           <div className="flex flex-row space-x-5 max-w-full p-2">
