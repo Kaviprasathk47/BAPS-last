@@ -48,6 +48,8 @@ const useStyles = makeStyles(() => ({
   attendance: {
     backgroundColor: "#FFFFFF",
     borderRadius: "10px",
+    display:'flex',
+    justifyContent:'center',
     padding: "20px",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
   },
@@ -71,6 +73,8 @@ const useStyles = makeStyles(() => ({
   eventSection: {
     flex: 1,
     padding: "20px",
+    display:'flex',
+    justifyContent:'center',
     backgroundColor: "#FFFFFF",
     borderRadius: "10px",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
@@ -78,6 +82,8 @@ const useStyles = makeStyles(() => ({
   activitiesSection: {
     flex: 1,
     padding: "20px",
+    display:'flex',
+    justifyContent:'space-around',
     backgroundColor: "#FFFFFF",
     borderRadius: "10px",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",

@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { Box, Typography } from "@mui/material";
+import React from "react";
+import { Box, Typography ,Button} from "@mui/material";
 import MarkChart from "../components/markChart/markChart";
 import Attendance from "../components/attendanceChart/attendanceChart";
 import Notifications from "../components/notificationStat/notification";
@@ -10,14 +10,11 @@ import Activities from "../components/activities/activities";
 import SelectTerm from "../components/selectTerm/selectTerm";
 import An from "../components/anounment/anouncement";
 import NavBar from "../components/navBar/sideBar";
+import Chart2 from '../components/attendanceChartPop/attendanceChart2'
+
 
 const Home = () => {
   const classes = useStyles();
-
-  useEffect(() => {
-    document.title = "B A P S - Home";
-  }, []);
-
   return (
     <Box className={classes.container}>
       <Box className={classes.dashtitle}>
@@ -48,7 +45,12 @@ const Home = () => {
             <Event />
           </Box>
           <Box className={classes.activitiesSection}>
-            <Activities />
+            <Box>
+              <Activities />
+            </Box>
+            <Box>
+              <Chart2/>
+            </Box>
           </Box>
         </Box>
       </Box>
