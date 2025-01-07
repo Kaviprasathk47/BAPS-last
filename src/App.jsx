@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom'; // Added useLocation import
 import MainPage from './components/MainPage.jsx';
 import Chart from './components/dashboard/Popup.jsx';
+import Chat from './components/Chat/chat.jsx';
 import SideBar from './SideBar/Sidebar.jsx';
 import LeaveFormPage from './components/LeaveFolder/LeaveForm.jsx';
 import LeaveInfo from './components/LeaveFolder/LeaveInfo.jsx';
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/" element={<MainPage />} />
         <Route path="/Popup" element={<Chart />} />
         <Route path="/leave" element={<LeaveFormPage />} />
+        <Route path="/chat" element={<Chat />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/homework" element={<HomeWork />} />
         <Route path="/LeaveInfo" element={<LeaveInfo />} />
