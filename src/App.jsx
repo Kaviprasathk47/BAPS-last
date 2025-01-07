@@ -9,6 +9,11 @@ import LeaveFormPage from './screens/leaveForm'
 import LeaveInfo from './screens/leaveInfo';
 import lightTheme from './themes/lightTheme'
 import Fees from './screens/fees'
+import HomeWork from './screens/homework'
+import LeaderBoard from './screens/leaderBoard'
+
+
+
 
 function App() {
   return (
@@ -21,6 +26,8 @@ function App() {
         <Route path="/leave" element={<LeaveFormPage />} />
         <Route path="/leave/info" element={<LeaveInfo />} />
         <Route path="/fees" element={<Fees />} />
+        <Route path="/homework" element={<HomeWork />} />
+        <Route path="/leaderboard" element={<LeaderBoard />} />
       </Routes>
     </ThemeProvider>
   );
