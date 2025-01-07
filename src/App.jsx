@@ -8,6 +8,7 @@ import LeaveInfo from './components/LeaveFolder/LeaveInfo.jsx';
 import AboutPage from './components/AboutPage.jsx';
 import HomeWork from './components/Academics/HomeWork.jsx';
 import LeaderBoard from './components/Academics/LeaderBorad.jsx';
+import NoticeFile from './components/Notice/NoticeFile.jsx';
 document.title = "BAPS";
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/homework" element={<HomeWork />} />
         <Route path="/LeaveInfo" element={<LeaveInfo />} />
         <Route path="/leaderboard" element={<LeaderBoard />} />
+        <Route path="/notifications" element={<NoticeFile/>} />
       </Routes>
     </div>
   );

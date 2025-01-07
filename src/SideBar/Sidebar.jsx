@@ -78,12 +78,7 @@ const Sidebar = () => {
         }
       ]
     },
-    { 
-      id: 'menu4',
-      title: 'Exam', 
-      icon: <CreditCard className="w-5 h-5" />,
-      path: '/exam'
-    },
+    
     { 
       id: 'menu5',
       title: 'Fees', 

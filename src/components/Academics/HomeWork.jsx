@@ -1,4 +1,4 @@
-import Shower from './Shower';
+import Shower from '../PopUp-Components/Shower';
 import { useState } from 'react';
 
 const HomeWork = () => {

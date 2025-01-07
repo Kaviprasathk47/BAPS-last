@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Shower from './Shower';
+import Shower from '../PopUp-Components/Shower';
 
 const LeaderBoard = () => {
   const ranks = [1, 2, 5, 0, 4, 8, 9, 3, 6, 7];
